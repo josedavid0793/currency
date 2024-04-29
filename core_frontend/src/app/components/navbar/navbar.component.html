@@ -1,8 +1,8 @@
 <header>
-    <div>
+    <div class="hd-img">
         <img src="../../../assets/currency.png">
     </div>
-    <nav>
+    <nav [ngClass]="{ 'show-menu': menuVisible }">
         <ul>
             <li><a>Home</a></li>
             <li><a>Convertidor</a></li>
@@ -11,4 +11,7 @@
             <li><a>Recursos</a></li>
         </ul>
     </nav>
+    <div class="hd-img-menu" (click)="toggleMenu($event)" #menuIcon>
+        <img src="../../../assets/menu.png">
+    </div>
 </header>

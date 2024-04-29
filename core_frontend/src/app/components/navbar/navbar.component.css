@@ -8,6 +8,12 @@ header {
   position: fixed;
   z-index: 100;
 }
+nav {
+  font-weight: 600;
+  inline-size: 50%;
+  letter-spacing: 1px;
+  text-align: center;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -15,5 +21,62 @@ ul {
 }
 li {
   display: inline;
-  margin-inline-end: 10px; /*mismo margin rigth*/
+  margin-inline-end: 25px; /*mismo margin rigth*/
+}
+.hd-img {
+  margin-inline-end: 20px; /*mismo margin rigth*/
+  margin-inline-start: 15px; /*mismo margin left*/
+}
+.hd-img-menu {
+  display: none;
+}
+
+/* Media queries para hacer responsive */
+/* Para pantallas más pequeñas, como tablets */
+@media (max-width: 768px) {
+  header {
+    padding: 5px;
+  }
+  nav {
+    display: none; /* Ocultar el menú por defecto */
+    text-align: start;
+  }
+
+  nav.show-menu {
+    display: block; /* Mostrar el menú cuando menuVisible es true */
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  .hd-img-menu {
+    block-size: 47px;
+    display: flex;
+    inline-size: auto;
+    margin-inline-end: 0px;
+    margin-inline-start: 68px;
+  }
+}
+
+/* Para pantallas más pequeñas, como móviles */
+@media (max-width: 480px) {
+  nav {
+    display: none; /* Ocultar el menú por defecto */
+    text-align: start;
+  }
+
+  nav.show-menu {
+    display: block; /* Mostrar el menú cuando menuVisible es true */
+  }
+  nav ul li {
+    margin: 5px 0;
+  }
+  .hd-img-menu {
+    block-size: 47px;
+    display: flex;
+    inline-size: auto;
+    margin-inline-end: 0px;
+    margin-inline-start: 68px;
+  }
 }
