@@ -1,0 +1,19 @@
+header {
+  background: cornflowerblue;
+  display: flex;
+  inline-size: 100%; /*mismo width*/
+  inset-block-start: 0; /*mismo top*/
+  inset-inline-start: 0; /*mismo left*/
+  padding: 10px;
+  position: fixed;
+  z-index: 100;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+  margin-inline-end: 10px; /*mismo margin rigth*/
+}
