@@ -1,1 +1,34 @@
-<p>converter works!</p>
+<div class="div-convert">
+  <div class="dd-cantidad">
+    <span *ngIf="showErrorMessage" style="color: red"
+      >Por favor, ingresa solo números</span
+    >
+    <label class="div-label">Cantidad</label>
+    <input
+      class="input-cantidad"
+      type="text"
+      inputmode="decimal"
+      pattern="[0-9\.' ,]*"
+      autocomplete="off"
+      (input)="validateInput($event)"
+      value="1.00"
+    />
+  </div>
+  <div class="dd-cantidad">
+    <label class="div-label">Desde la divisa</label>
+    <select class="input-divisa">
+      <option *ngFor="let quote of quotes">{{ quote.to }}</option>
+    </select>
+  </div>
+  <div class="d-button">
+    <button class="button-enchange" type="submit">
+      <i class="fas fa-exchange-alt"></i>
+    </button>
+  </div>
+  <div class="dd-cantidad">
+    <label class="div-label">A la divisa</label>
+    <select class="input-divisa">
+      <option *ngFor="let quote of quotes">{{ quote.to }}</option>
+    </select>
+  </div>
+</div>

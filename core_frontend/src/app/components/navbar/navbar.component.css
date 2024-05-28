@@ -1,10 +1,11 @@
 header {
-  background: cornflowerblue;
+  background: #117a65;
   display: flex;
+  block-size: 40px; /*mismo heigth*/
   inline-size: 100%; /*mismo width*/
   inset-block-start: 0; /*mismo top*/
   inset-inline-start: 0; /*mismo left*/
-  padding: 10px;
+  padding: 10px !important;
   position: fixed;
   z-index: 100;
 }
@@ -12,6 +13,7 @@ nav {
   font-weight: 600;
   inline-size: 50%;
   letter-spacing: 1px;
+  margin-block-start: 8px;
   text-align: center;
 }
 ul {
@@ -30,16 +32,31 @@ li {
 .hd-img-menu {
   display: none;
 }
-
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+nav ul li a:hover {
+  background: #a2d9ce;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
 /* Media queries para hacer responsive */
 /* Para pantallas más pequeñas, como tablets */
 @media (max-width: 768px) {
   header {
+    justify-content: space-between;
+    block-size: auto;
     padding: 5px;
   }
   nav {
     display: none; /* Ocultar el menú por defecto */
     text-align: start;
+  }
+  nav ul li a {
+    font-size: 20px;
+    color: #fff;
   }
 
   nav.show-menu {
@@ -54,20 +71,33 @@ li {
     block-size: 47px;
     display: flex;
     inline-size: auto;
-    margin-inline-end: 0px;
-    margin-inline-start: 68px;
+    margin-inline-end: 20px;
+  }
+  nav ul li a:hover {
+    background: #5d6d7e;
   }
 }
 
-/* Para pantallas más pequeñas, como móviles */
+/* Para pantallas más pequeñas, como móviles #5D6D7E */
 @media (max-width: 480px) {
+  header {
+    justify-content: space-between;
+    block-size: auto;
+    padding: 5px;
+  }
   nav {
     display: none; /* Ocultar el menú por defecto */
     text-align: start;
   }
+  nav ul li a {
+    font-size: 20px;
+    color: #fff;
+  }
 
   nav.show-menu {
     display: block; /* Mostrar el menú cuando menuVisible es true */
+    font-size: 20px;
+    color: #fff;
   }
   nav ul li {
     margin: 5px 0;
@@ -76,7 +106,9 @@ li {
     block-size: 47px;
     display: flex;
     inline-size: auto;
-    margin-inline-end: 0px;
-    margin-inline-start: 68px;
+    margin-inline-end: 20px;
+  }
+  nav ul li a:hover {
+    background: #5d6d7e;
   }
 }

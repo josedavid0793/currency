@@ -5,3 +5,15 @@ body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+app-home{
+    display: flex;
+    flex-direction: column;
+}
+app-navbar{
+    order: 1;
+}
+app-converter{
+    order: 2;
+    margin-block-start: 150px;
+
+}
