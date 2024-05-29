@@ -1,36 +1,52 @@
-<div class="div-convert">
-  <div class="dd-cantidad">
-    <span *ngIf="showErrorMessage" style="color: red"
-      >Por favor, ingresa solo números</span
-    >
-    <label class="div-label">Cantidad</label>
-    <input
-      class="input-cantidad"
-      type="text"
-      inputmode="decimal"
-      pattern="[0-9\.' ,]*"
-      autocomplete="off"
-      (input)="validateInput($event)"
-      value="1.00"
-    />
+<div class="div-principal">
+  <div class="div-convert">
+    <div class="dd-cantidad-1">
+      <span *ngIf="showErrorMessage" style="color: red"
+        >Por favor, ingresa solo números</span
+      >
+      <label class="div-label">Cantidad</label>
+      <input
+        class="input-cantidad"
+        type="text"
+        inputmode="decimal"
+        pattern="[0-9\.' ,]*"
+        autocomplete="off"
+        (input)="validateInput($event)"
+        value="1.00"
+        id="amount"
+        [(ngModel)]="amount"
+        min="1"
+      />
+    </div>
+    <div class="dd-cantidad">
+      <label class="div-label">Desde la divisa</label>
+      <select class="input-divisa" id="base" [(ngModel)]="base_code">
+        <!--<option *ngFor="let quote of quotes | orderBy: 'to'">{{ quote.to }}</option>-->
+        <option *ngFor="let code of getKeys(exchangeRates)" [value]="code">
+          {{ currencyNames[code] || code }}
+        </option>
+      </select>
+    </div>
+    <div class="d-button">
+      <button class="button-enchange" type="submit">
+        <i class="fas fa-exchange-alt"></i>
+      </button>
+    </div>
+    <div class="dd-cantidad">
+      <label class="div-label">A la divisa</label>
+      <select class="input-divisa" id="target" [(ngModel)]="target_code">
+        <!--<option *ngFor="let quote of quotes | orderBy: 'to'">{{ quote.to }}</option>-->
+        <option *ngFor="let code of getKeys(exchangeRates)" [value]="code">
+          {{ currencyNames[code] || code }}
+        </option>
+      </select>
+    </div>
+    <div class="dd-cantidad-4">
+      <button class="button-convert" (click)="getExchangeRate()">Convertir</button>
+    </div>
   </div>
-  <div class="dd-cantidad">
-    <label class="div-label">Desde la divisa</label>
-    <select class="input-divisa">
-      <!--<option *ngFor="let quote of quotes | orderBy: 'to'">{{ quote.to }}</option>-->
-      <option *ngFor="let code of getKeys(exchangeRates)">{{ currencyNames[code] || code }}</option>
-    </select>
-  </div>
-  <div class="d-button">
-    <button class="button-enchange" type="submit">
-      <i class="fas fa-exchange-alt"></i>
-    </button>
-  </div>
-  <div class="dd-cantidad">
-    <label class="div-label">A la divisa</label>
-    <select class="input-divisa">
-      <!--<option *ngFor="let quote of quotes | orderBy: 'to'">{{ quote.to }}</option>-->
-      <option *ngFor="let code of getKeys(exchangeRates)">{{ currencyNames[code] || code }}</option>
-    </select>
+  <div class="div-p-result" *ngIf="conversionResult !== null">
+    <p class="p-resultado">{{amount}}  {{base_code}} = <strong>{{ conversionResult }}</strong> {{ target_code}}</p>
   </div>
 </div>
+

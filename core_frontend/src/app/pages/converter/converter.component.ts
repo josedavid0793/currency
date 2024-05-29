@@ -19,6 +19,10 @@ export class ConverterComponent {
   selectedConversion: any[] = [];
   currencyNames = currencyNames; // Asigna el mapeo a una propiedad del componente
   exchangeRates: { [key: string]: number } = {};
+  base_code: string = '';
+  target_code: string = '';
+  amount: number = 1;
+  conversionResult: number | null = null;
 
   constructor(private currencyService: CurrencyService) {}
 
@@ -65,5 +69,12 @@ export class ConverterComponent {
     } else {
       this.showErrorMessage = false;
     }
+  }
+
+  getExchangeRate() {
+    this.currencyService.getExchangeRate(this.base_code, this.target_code, this.amount)
+      .subscribe(response => {
+        this.conversionResult = response.conversion_result;
+      });
   }
 }

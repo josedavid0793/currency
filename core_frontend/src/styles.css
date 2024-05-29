@@ -4,6 +4,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background: #52BE80;
 }
 app-home{
     display: flex;
@@ -14,6 +15,7 @@ app-navbar{
 }
 app-converter{
     order: 2;
-    margin-block-start: 150px;
-
+    margin-block-start: 118px;
+    display: ruby;
+    align-self: center;
 }

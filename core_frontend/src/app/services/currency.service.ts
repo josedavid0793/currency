@@ -17,4 +17,8 @@ key = '52516|gNYRHbDHU2PX63XwMpNO';
       `https://v6.exchangerate-api.com/v6/e0ecd6962e993801550da7ef/latest/USD`
     );
   }
+  getExchangeRate(base_code: string, target_code: string, amount: number): Observable<any> {
+    const url = `https://v6.exchangerate-api.com/v6/e0ecd6962e993801550da7ef/pair/${base_code}/${target_code}/${amount}`;
+    return this.http.get<any>(url);
+  }
 }
