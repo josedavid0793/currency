@@ -17,7 +17,8 @@
   <div class="dd-cantidad">
     <label class="div-label">Desde la divisa</label>
     <select class="input-divisa">
-      <option *ngFor="let quote of quotes | orderBy: 'to'">{{ quote.to }}</option>
+      <!--<option *ngFor="let quote of quotes | orderBy: 'to'">{{ quote.to }}</option>-->
+      <option *ngFor="let code of getKeys(exchangeRates)">{{ currencyNames[code] || code }}</option>
     </select>
   </div>
   <div class="d-button">
@@ -28,7 +29,8 @@
   <div class="dd-cantidad">
     <label class="div-label">A la divisa</label>
     <select class="input-divisa">
-      <option *ngFor="let quote of quotes">{{ quote.to }}</option>
+      <!--<option *ngFor="let quote of quotes | orderBy: 'to'">{{ quote.to }}</option>-->
+      <option *ngFor="let code of getKeys(exchangeRates)">{{ currencyNames[code] || code }}</option>
     </select>
   </div>
 </div>
