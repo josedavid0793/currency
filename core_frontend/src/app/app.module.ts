@@ -9,14 +9,15 @@ import { ConverterComponent } from './pages/converter/converter.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { OrderByPipe } from './pipes/order-by.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     ConverterComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
