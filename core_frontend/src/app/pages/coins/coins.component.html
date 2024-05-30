@@ -10,12 +10,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let coin of coinsList">
+        <tr *ngFor="let coin of paginatedCoinsList">
           <td>{{ coin.code }}</td>
           <td>{{ coin.name }}</td>
           <td>{{ coin.country }}</td>
         </tr>
       </tbody>
     </table>
+    <div class="pagination">
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+      <button *ngFor="let page of [].constructor(totalPages); let i = index" (click)="changePage(i + 1)" [class.active]="i + 1 === currentPage">{{ i + 1 }}</button>
+      <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+    </div>
   </div>
   <app-footer></app-footer>

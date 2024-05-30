@@ -1,5 +1,6 @@
 .container {
     margin: 20px;
+    margin-block-end: 168px;
   }
   
   .table {
@@ -17,4 +18,27 @@
     background-color: #f2f2f2;
     text-align: start;
   }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
   
+  .pagination button {
+    background-color: #52be80;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .pagination button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination button.active {
+    background-color: #186A3B;
+  }
