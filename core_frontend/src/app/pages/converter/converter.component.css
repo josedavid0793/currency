@@ -88,6 +88,9 @@
   block-size: 33px;
   inline-size: 188px;
 }
+.button-convert:hover{
+  cursor: pointer;
+}
 .p-resultado{
   font-weight: 500;
   letter-spacing: 0.3px;

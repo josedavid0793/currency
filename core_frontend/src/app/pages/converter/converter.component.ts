@@ -23,6 +23,7 @@ export class ConverterComponent {
   target_code: string = '';
   amount: number = 1;
   conversionResult: number | null = null;
+  
 
   constructor(private currencyService: CurrencyService) {}
 
@@ -31,16 +32,6 @@ export class ConverterComponent {
       this.exchangeRates = data.conversion_rates;
       console.log(this.exchangeRates);
     });
-    //debugger;
-    /*this.currencyService.getCurrency().subscribe((data) => {
-      this.quotes = data.result.conversion.map(
-        (conversion: { to: string | number }) => ({
-          ...conversion,
-          to: this.currencyNames[conversion.to] || conversion.to,
-        })
-      );
-      console.log(this.quotes);
-    });*/
   }
 
   getKeys(obj: any): string[] {
@@ -74,7 +65,11 @@ export class ConverterComponent {
   getExchangeRate() {
     this.currencyService.getExchangeRate(this.base_code, this.target_code, this.amount)
       .subscribe(response => {
-        this.conversionResult = response.conversion_result;
+        if (response!=null) {
+          this.conversionResult = response.conversion_result;
+        }else{
+          this.conversionResult = response.result;
+        }
       });
   }
 }
