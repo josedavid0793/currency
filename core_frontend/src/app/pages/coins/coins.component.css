@@ -1,12 +1,14 @@
 .container {
     margin: 20px;
     margin-block-end: 168px;
+    padding: 10px;
   }
   
   .table {
     inline-size: 100%;
     border-collapse: collapse;
     background: #D5DBDB;
+    overflow-x: auto;
   }
   
   .table th, .table td {
@@ -21,13 +23,14 @@
   .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-block-start: 20px;
+    flex-wrap: wrap;
   }
   
   .pagination button {
     background-color: #52be80;
     border: none;
-    color: white;
+    color: #000;
     padding: 10px 20px;
     margin: 0 2px;
     cursor: pointer;
@@ -42,3 +45,32 @@
   .pagination button.active {
     background-color: #186A3B;
   }
+
+  /* Estilos responsive */
+@media (max-width: 768px) {
+  .table th, .table td {
+    padding: 12px 8px;
+  }
+
+  .pagination button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin: 10px;
+    padding: 5px;
+    margin-block-end: 200px;
+  }
+
+  .table th, .table td {
+    padding: 10px 6px;
+    font-size: 14px;
+  }
+
+  .pagination button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
