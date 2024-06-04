@@ -1,0 +1,36 @@
+.terms-banner {
+    position: fixed;
+    inset-block-end: 0;
+    inline-size: 100%;
+    background-color: #ABB2B9;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  .terms-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-inline-size: 800px;
+    margin: 0 auto;
+  }
+  
+  .terms-content p {
+    margin: 0;
+    flex: 1;
+  }
+  
+  .terms-content button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .terms-content button:hover {
+    background-color: #45a049;
+  }
+  

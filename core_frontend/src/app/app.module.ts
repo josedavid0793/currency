@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { CoinsComponent } from './pages/coins/coins.component';
+import { TerminosComponent } from './components/terminos/terminos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { CoinsComponent } from './pages/coins/coins.component';
     NavbarComponent,
     FooterComponent,
     OrderByPipe,
-    CoinsComponent
+    CoinsComponent,
+    TerminosComponent
   ],
   imports: [
     BrowserModule,
