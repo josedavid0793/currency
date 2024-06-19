@@ -1,5 +1,5 @@
 header {
-  background: #117a65;
+  background: #34495E;
   display: flex;
   block-size: 40px; /*mismo heigth*/
   inline-size: 100%; /*mismo width*/
@@ -34,7 +34,7 @@ li {
 }
 nav ul li a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 nav ul li a:hover {
   background: #a2d9ce;

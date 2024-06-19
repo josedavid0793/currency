@@ -23,6 +23,7 @@ export class ConverterComponent {
   target_code: string = '';
   amount: number = 1;
   conversionResult: number | null = null;
+  formattedResult: string | null = null;
   
 
   constructor(private currencyService: CurrencyService) {}
@@ -70,6 +71,18 @@ export class ConverterComponent {
         }else{
           this.conversionResult = response.result;
         }
+         // Formatear el resultado
+         this.formattedResult = this.formatCurrency(this.amount, this.conversionResult);
+        
       });
   }
+  formatCurrency(audAmount: number, copAmount: number | null): string | null {
+    if (copAmount === null) {
+      return null;
+    }
+    // Convertir a entero y formatear con separadores de miles
+    let formattedCopAmount = Math.floor(copAmount).toLocaleString('de-DE'); // 'de-DE' usa punto como separador de miles
+    return `${audAmount} ${this.base_code} = ${formattedCopAmount} ${this.target_code}`;
+  }
+
 }

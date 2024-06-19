@@ -104,6 +104,8 @@
 }
 .div-p-result{
   background: #F0F3F4;
+  display: flex;
+  justify-content: center;
 }
 
 /* Ajustes para tamaños de pantalla medianos (tabletas) */

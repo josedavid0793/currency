@@ -46,7 +46,8 @@
     </div>
   </div>
   <div class="div-p-result" *ngIf="conversionResult !== null">
-    <p class="p-resultado">{{amount}}  {{base_code}} = <strong>{{ conversionResult }}</strong> {{ target_code}}</p>
+    <!--<p class="p-resultado">{{amount}}  {{base_code}} = <strong>{{ conversionResult }}</strong> {{ target_code}}</p>-->
+    <p class="p-resultado">{{ formattedResult }}</p>
   </div>
 </div>
 
