@@ -64,11 +64,6 @@
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 .d-button {
-  /*align-items: center;
-  display: flex;
-  inline-size: 10%;
-  justify-content: center;
-  padding: 0px;*/
   margin-block-start: 12px;
     display: flex;
     align-self: flex-start;
@@ -105,7 +100,7 @@
 .div-p-result{
   background: #F0F3F4;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
 }
 
 /* Ajustes para tamaños de pantalla medianos (tabletas) */
@@ -185,7 +180,7 @@
 .d-button {
   align-items: center;
   display: flex;
-  inline-size: 100%; /* Ajuste para pantallas pequeñas */
+  inline-size: 95%; /* Ajuste para pantallas pequeñas */
   justify-content: center;
   padding: 0px;
 }
@@ -233,3 +228,19 @@
   letter-spacing: 0.3px;
   font-size: 24px;
 }
+
+@media (max-width: 480px) {
+  .dd-cantidad{
+    inline-size: 95%;
+  }
+  .dd-cantidad-1{
+    inline-size: 95%;
+  }
+  .dd-cantidad-4{
+    inline-size: 95%;
+  }
+  .div-convert{
+    block-size: 30%;
+  }
+}
+

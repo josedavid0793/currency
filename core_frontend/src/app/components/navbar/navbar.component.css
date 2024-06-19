@@ -105,8 +105,7 @@ nav ul li a:hover {
   .hd-img-menu {
     block-size: 47px;
     display: flex;
-    inline-size: auto;
-    margin-inline-end: 20px;
+    margin-inline-end: 35px;
   }
   nav ul li a:hover {
     background: #5d6d7e;

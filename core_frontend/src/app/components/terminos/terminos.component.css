@@ -33,4 +33,11 @@
   .terms-content button:hover {
     background-color: #45a049;
   }
-  
+  @media (max-width: 480px) {
+    .terms-banner{
+      inline-size: 90%;
+      margin-block-end: 100px;
+      margin-inline-start: 6px;
+
+    }
+  }

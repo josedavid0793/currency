@@ -76,3 +76,11 @@ footer img {
     display: none;
   }
 }
+@media (max-width: 480px) {
+  .div-derechos{
+    margin-block-end: 8px;
+  }
+  li{
+    margin-inline-end: 5px;
+  }
+}
